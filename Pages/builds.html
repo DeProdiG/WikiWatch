@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>WikiWatch - Become Legend</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Gita Paul">
+	<meta name="description" content="Course Project: Builds Page">
+
+	<link rel="stylesheet" type="text/css" href="../Styles/main.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/builds.css">
+	<link rel="stylesheet" type="text/css" href="../styles/responsive.css">
+</head>
+
+<body>
+	<div id="wrapper">
+		<header id="main-header">
+			<div id="header-text" class="upcase">
+				<h1>WikiWatch</h1>
+			</div>
+			<nav id="main-nav" class="upcase">
+				<ul id="hidden-nav">
+					<a>menu</a>
+				</ul>
+				<ul id="responsive-nav">
+					<a href="builds.html">
+						<li>builds</li>
+					</a>
+					<a href="gallery.html">
+						<li>gallery</li>
+					</a>
+					<a href="heroes.html">
+						<li>heroes</li>
+					</a>
+					<a href="../index.html">
+						<li>home</li>
+					</a>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<article id="first-article">
+					<h2 class="upcase">it is show time!</h2>
+					<p class="form-p">The section for building your way to overpowered gameplay!</p>
+					<p><em>Note: All your materials are well-hidden from dangerous behavior.</em></p>
+				</article>
+				<hr>
+				<div id="sign-div">
+					<form id="sign-up-form" method="POST" action="./upload.php">
+						<div class="main-label">New around? Register now!</div>
+						<div class="inline-l-f-n">
+							<label for="firstname">Name*:</label><br>
+							<input type="text" name="firstname" placeholder="First" id="firstname" class="field">
+							<input type="text" name="lastname" placeholder="Last" id="lastname" class="field">
+						</div>
+						<div class="inline-l-f">
+							<label for="usernameup">Username*:</label>
+							<input type="text" name="usernameup" placeholder="2-20 characters" id="usernameup"
+								class="field">
+						</div>
+						<div class="inline-l-f">
+							<label for="email">Your e-mail*:</label>
+							<input type="email" name="email" placeholder="ex@mple.com" id="email" class="field"
+								onclick="alignTextLeft()" onfocus="alignTextLeft()">
+						</div>
+						<div class="radiochoice">
+							<label>Sex:</label>
+							<span><input type="radio" name="sex" value="male"> Male</span>
+							<span><input type="radio" name="sex" value="female"> Female</span>
+						</div>
+						<div class="inline-l-f">
+							<label for="tel">Phone №*:</label>
+							<input type="tel" name="tel" placeholder="+999 999 999 999" id="tel" class="field"
+								pattern="[\+\d+\s*]{11,}">
+						</div>
+						<div class="inline-l-f">
+							<label for="passwordsup">Password*:</label>
+							<input type="password" name="passwordsup" placeholder="At least 6 characters"
+								id="passwordup" class="field">
+						</div>
+						<div class="inline-l-f">
+							<label for="conpassword">Confirm Password*:</label>
+							<input type="password" name="passwordcon" placeholder="Repeat it" id="passwordcon"
+								class="field">
+						</div>
+						<input type="reset" class="btn btn-res" value="Reset">
+						<input type="submit" class="btn btn-reg" value="Register">
+					</form>
+					<form id="sign-in-form" method="POST" action="./upload.php">
+						<div class="main-label">Already a user? Sign in!</div>
+						<div class="inline-l-f">
+							<label for="usernamein">Username:</label>
+							<input type="text" name="usernamein" id="usernamein" class="field">
+						</div>
+						<div class="inline-l-f">
+							<label for="password">Password:</label>
+							<input type="password" name="password" id="passwordin" class="field">
+						</div>
+						<div class="inlinechbox">
+							<input type="checkbox" name="rem" id="rembox">
+							<label id="rem" for="rembox">Remember me?</label>
+						</div><br>
+						<input type="submit" class="btn btn-signin" value="Sign In">
+						<div>
+							<a id="forgot" href="#">Forgot Password</a>
+						</div>
+					</form>
+				</div>
+				<div id="upload-div">
+					<form id="upload-form" method="POST" action="upload.php">
+						<div class="m-t">
+							<label for="img-upload">Your hero's stats*:</label>
+							<label for="img-upload" class="img-upload-t">Upload</label><br>
+							<input id="img-upload" type="file" class="field"><br>
+						</div>
+						<div class="inline-l-f">
+							<label for="pcname">Hero's Name*:</label>
+							<input type="text" name="picname" placeholder="2-20 characters" id="picname" class="field">
+						</div>
+						<div class="inline-l-f">
+							<label for="enddate">Deadline:</label>
+							<input type="date" name="enddate" id="enddate" class="field" min="1980-01-01"
+								max="2018-06-07">
+						</div>
+						<div class="radiochoice">
+							<label>Class*:</label>
+							<span><input type="radio" name="genre" value="tank">Tank</span>
+							<span><input type="radio" name="genre" value="dps">Damage</span>
+							<span><input type="radio" name="genre" value="support">Support</span>
+							<span><input type="radio" name="genre" value="all">All classes</span>
+						</div>
+						<div class="inline-l-f">
+							<label for="build-details">Description:</label><br>
+							<textarea name="build-details" placeholder="Details about the build you want to receive."
+								id="build-details"></textarea>
+						</div>
+						<div>
+							<button class="btn" onclick="hidePicUpload()">Go Back</button>
+							<input type="reset" class="btn btn-res" value="Reset">
+							<input type="submit" class="btn btn-upload" value="Upload Your Requirements">
+						</div>
+						<div>
+							<span id="hidden-text">The build was requested successfully!</span>
+						</div>
+					</form>
+
+				</div>
+				<div class="last-p">
+					<p><a href="../index.html">Come back at any time!</a></p>
+				</div>
+			</section>
+			<aside>
+				<h2>Quick peak at <a href="gallery.html">Gallery</a></h2>
+				<h3>Map: Brazil, Templo De Anubis</h3>
+				<img src="../Images/Gallery/Brasil.jpg" alt="Brazil map Picture">
+				<h3>Genji</h3>
+				<img src="../Images/Gallery/Genji.jpg" alt="Genji Picture">
+				<h3>Kiriko's All Abilities Art</h3>
+				<img src="../Images/Gallery/KirikoArt.jpg" alt="Kiriko's All Abilities Picture">
+			</aside>
+		</main>
+		<footer id="main-footer">
+			<span class="footer-t-l"><a href="../index.html">WikiWatch</a></span>
+			<span class="footer-t-r">Get striked for your foul play! <a href="#">&#169; Gita Paul</a></span>
+		</footer>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="../Script/form.js"></script>
+</body>
+
+</html>
